@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Aplikacja do nauki niemieckich czasowników nieregularnych">
+  <meta name="theme-color" content="#667eea">
+  <title>Fiszki niemieckie czasowniki</title>
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- EKRAN LOGOWANIA -->
+  <div id="login-screen">
+    <div>
+      <h1>🇩🇪 Niemieckie Czasowniki</h1>
+      <p class="subtitle">Wybierz użytkownika</p>
+    </div>
+    <div class="user-buttons">
+      <button class="user-btn" data-user="marcel">
+        <span><span class="icon">👨‍💻</span> Marcel</span>
+        <span class="lock">🔒</span>
+      </button>
+      <button class="user-btn" data-user="magda">
+        <span><span class="icon">👩‍💻</span> Magda</span>
+        <span class="lock">🔒</span>
+      </button>
+      <button class="user-btn" data-user="gosc">
+        <span><span class="icon">👤</span> Gość</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL KODU PIN -->
+  <div id="pin-modal">
+    <div class="pin-content">
+      <h2>Wprowadź kod PIN</h2>
+      <p class="username" id="pin-username"></p>
+      <input type="password" id="pin-input" placeholder="••••" maxlength="6" inputmode="numeric">
+      <div class="pin-error" id="pin-error"></div>
+      <div class="pin-buttons">
+        <button class="pin-btn pin-btn-cancel" id="pin-cancel">Anuluj</button>
+        <button class="pin-btn pin-btn-submit" id="pin-submit">Zaloguj</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EKRAN WYBORU ZBIORÓW -->
+  <div id="set-selection-screen">
+    <h2>📚 Wybierz zbiory do nauki</h2>
+
+    <div class="set-option set-again">
+      <label>
+        <input type="checkbox" id="set-again" checked disabled>
+        <span>🔴 AGAIN (zawsze aktywny)</span>
+      </label>
+      <span class="count" id="count-again">0</span>
+    </div>
+
+    <div class="set-option set-hard">
+      <label>
+        <input type="checkbox" id="set-hard">
+        <span>🟠 HARD</span>
+      </label>
+      <span class="count" id="count-hard">0</span>
+    </div>
+
+    <div class="set-option set-good">
+      <label>
+        <input type="checkbox" id="set-good">
+        <span>🟢 GOOD</span>
+      </label>
+      <span class="count" id="count-good">0</span>
+    </div>
+
+    <div class="set-option set-easy">
+      <label>
+        <input type="checkbox" id="set-easy">
+        <span>🔵 EASY</span>
+      </label>
+      <span class="count" id="count-easy">0</span>
+    </div>
+
+    <button class="start-btn" id="start-learning-btn">🚀 Rozpocznij naukę</button>
+  </div>
+
+  <!-- EKRAN STATYSTYK -->
+  <div id="stats-screen">
+    <h2>📊 Twoje Statystyki</h2>
+
+    <div class="stat-item set-again">
+      <span class="label">🔴 AGAIN</span>
+      <span class="value" id="stat-again">0 kart (0%)</span>
+    </div>
+
+    <div class="stat-item set-hard">
+      <span class="label">🟠 HARD</span>
+      <span class="value" id="stat-hard">0 kart (0%)</span>
+    </div>
+
+    <div class="stat-item set-good">
+      <span class="label">🟢 GOOD</span>
+      <span class="value" id="stat-good">0 kart (0%)</span>
+    </div>
+
+    <div class="stat-item set-easy">
+      <span class="label">🔵 EASY</span>
+      <span class="value" id="stat-easy">0 kart (0%)</span>
+    </div>
+
+    <button class="back-btn" id="back-to-learning-btn">← Powrót do wyboru zbiorów</button>
+  </div>
+
+  <!-- GŁÓWNA APLIKACJA -->
+  <div id="app-screen">
+    <div class="user-info">
+      <span>👤 <span id="current-user-name"></span></span>
+      <span class="counter-inline">
+        <span id="current">1</span> / <span id="total">0</span>
+      </span>
+      <div class="top-buttons">
+        <button class="stats-btn" id="stats-btn">📊</button>
+        <button class="logout-btn" id="logout-btn">Wyloguj</button>
+      </div>
+    </div>
+
+    <div class="title-row">
+      <h1>🇩🇪 Czasowniki Nieregularne</h1>
+      <span class="current-set-badge" id="current-set">AGAIN</span>
+    </div>
+
+    <div class="flashcard-container">
+      <div class="flashcard" id="flashcard">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="card-label">Pytanie</div>
+            <button class="speaker-btn" id="speaker-front" aria-label="Odczytaj">🔊</button>
+            <p id="front-text">Ładowanie...</p>
+          </div>
+          <div class="flashcard-back">
+            <div class="card-label">Odpowiedź</div>
+            <button class="speaker-btn" id="speaker-back" aria-label="Odczytaj">🔊</button>
+            <p id="back-text">Ładowanie...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hint">💡 Przytrzymaj fiszkę aby zobaczyć drugą stronę</div>
+
+    <div class="flip-button-container">
+      <button id="flip-btn" class="btn-flip">🔄 Odwróć fiszkę</button>
+    </div>
+
+    <div class="rating-buttons">
+      <button class="rating-btn btn-again" id="btn-again">
+        <span>AGAIN</span>
+        <span class="shortcut">(1)</span>
+      </button>
+      <button class="rating-btn btn-hard" id="btn-hard">
+        <span>HARD</span>
+        <span class="shortcut">(2)</span>
+      </button>
+      <button class="rating-btn btn-good" id="btn-good">
+        <span>GOOD</span>
+        <span class="shortcut">(3)</span>
+      </button>
+      <button class="rating-btn btn-easy" id="btn-easy">
+        <span>EASY</span>
+        <span class="shortcut">(4)</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <!-- PWA Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(registration => {
+            console.log('SW registered: ', registration);
+          })
+          .catch(error => {
+            console.log('SW registration failed: ', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
