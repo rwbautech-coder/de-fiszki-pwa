@@ -28,68 +28,68 @@ const RATING = {
 const RATING_NAMES = ['AGAIN', 'HARD', 'GOOD', 'EASY'];
 
 // DANE FISZEK - 62 czasowniki
-const flashcardsData = `beginnen	zaczynać | Präteritum: begann | Partizip II: begonnen
-bieten	oferować | Präteritum: bot | Partizip II: geboten
-bitten	prosić | Präteritum: bat | Partizip II: gebeten
-bleiben	zostać pozostać | Präteritum: blieb | Partizip II: geblieben sein
-braten	smażyć | Präteritum: briet | Partizip II: gebraten | 3. os: brät
-bringen	przynieść | Präteritum: brachte | Partizip II: gebracht
-denken	myśleć | Präteritum: dachte | Partizip II: gedacht
-empfehlen	polecać | Präteritum: empfahl | Partizip II: empfohlen | 3. os: empfiehlt
-entscheiden	decydować | Präteritum: entschied | Partizip II: entschieden
-essen	jeść | Präteritum: aß | Partizip II: gegessen | 3. os: isst
-fahren	jechać, zawieźć | Präteritum: fuhr | Partizip II: gefahren sein haben | 3. os: fährt
-fallen	upadać | Präteritum: fiel | Partizip II: gefallen sein | 3. os: fällt
-fangen	łapać | Präteritum: fing | Partizip II: gefangen | 3. os: fängt
-finden	znaleźć | Präteritum: fand | Partizip II: gefunden
-fliegen	latać | Präteritum: flog | Partizip II: geflogen sein haben
-geben	dawać | Präteritum: gab | Partizip II: gegeben | 3. os: gibt
-gehen	iść | Präteritum: ging | Partizip II: gegangen sein
-geschehen	dziać się, wydarzyć się | Präteritum: geschah | Partizip II: geschehen sein | 3. os: geschieht
-gewinnen	wygrać, zyskać | Präteritum: gewann | Partizip II: gewonnen
-haben	mieć | Präteritum: hatte | Partizip II: gehabt | 3. os: hat
-halten	trzymać | Präteritum: hielt | Partizip II: gehalten | 3. os: hält
-hängen	wisieć | Präteritum: hing | Partizip II: gehangen
-heißen	nazywać się | Präteritum: hieß | Partizip II: geheißen
-helfen	pomagać | Präteritum: half | Partizip II: geholfen | 3. os: hilft
-kennen	znać | Präteritum: kannte | Partizip II: gekannt
-kommen	przychodzić | Präteritum: kam | Partizip II: gekommen sein
-(ein)laden	ładować | Präteritum: lud ein | Partizip II: (ein)geladen | 3. os: lädt ... (ein)
-lassen	pozwalać | Präteritum: ließ | Partizip II: gelassen | 3. os: lässt
-laufen	biec | Präteritum: lief | Partizip II: gelaufen sein | 3. os: läuft
-lesen	czytać | Präteritum: las | Partizip II: gelesen | 3. os: liest
-liegen	leżeć | Präteritum: lag | Partizip II: gelegen
-nehmen	brać, wziąć | Präteritum: nahm | Partizip II: genommen | 3. os: nimmt
-rufen	wołać | Präteritum: rief | Partizip II: gerufen
-schlafen	spać | Präteritum: schlief | Partizip II: geschlafen | 3. os: schläft
-schlagen	bić, uderzać | Präteritum: schlug | Partizip II: geschlagen | 3. os: schlägt
-schließen	zamykać | Präteritum: schloss | Partizip II: geschlossen
-schneiden	ciąć, kroić | Präteritum: schnitt | Partizip II: geschnitten
-schreiben	pisać | Präteritum: schrieb | Partizip II: geschrieben
-schwimmen	pływać | Präteritum: schwamm | Partizip II: geschwommen sein
-sehen	widzieć | Präteritum: sah | Partizip II: gesehen | 3. os: sieht
-sein	być | Präteritum: war | Partizip II: gewesen sein | 3. os: ist
-singen	śpiewać | Präteritum: sang | Partizip II: gesungen
-sitzen	siedzieć | Präteritum: saß | Partizip II: gesessen
-sprechen	mówić | Präteritum: sprach | Partizip II: gesprochen | 3. os: spricht
-stehen	stać | Präteritum: stand | Partizip II: gestanden
-steigen	wzrastać, wspinać się | Präteritum: stieg | Partizip II: gestiegen sein
-sterben	umierać | Präteritum: starb | Partizip II: gestorben sein | 3. os: stirbt
-streiten	kłócić się | Präteritum: stritt | Partizip II: gestritten
-tragen	nosić | Präteritum: trug | Partizip II: getragen | 3. os: trägt
-treffen	spotykać | Präteritum: traf | Partizip II: getroffen | 3. os: trifft
-treiben	uprawiać, napędzać | Präteritum: trieb | Partizip II: getrieben
-trinken	pić | Präteritum: trank | Partizip II: getrunken
-tun	czynić, robić | Präteritum: tat | Partizip II: getan | 3. os: tut
-vergessen	zapomnieć | Präteritum: vergaß | Partizip II: vergessen | 3. os: vergisst
-verlieren	tracić, gubić | Präteritum: verlor | Partizip II: verloren
-wachsen	rosnąć | Präteritum: wuchs | Partizip II: gewachsen sein | 3. os: wächst
-waschen	myć się, prać | Präteritum: wusch | Partizip II: gewaschen | 3. os: wäscht
-werden	stawać się, zostać | Präteritum: wurde | Partizip II: geworden sein | 3. os: wird
-werfen	rzucać | Präteritum: warf | Partizip II: geworfen | 3. os: wirft
-wissen	wiedzieć | Präteritum: wusste | Partizip II: gewusst | 3. os: weiß
-ziehen	ciągnąć | Präteritum: zog | Partizip II: gezogen sein haben
-zwingen	zmuszać | Präteritum: zwang | Partizip II: gezwungen`;
+const flashcardsData = `beginnen\tzaczynać | Präteritum: begann | Partizip II: begonnen
+bieten\toferować | Präteritum: bot | Partizip II: geboten
+bitten\tprosić | Präteritum: bat | Partizip II: gebeten
+bleiben\tzostać pozostać | Präteritum: blieb | Partizip II: geblieben sein
+braten\tsmażyć | Präteritum: briet | Partizip II: gebraten | 3. os: brät
+bringen\tprzynieść | Präteritum: brachte | Partizip II: gebracht
+denken\tmyśleć | Präteritum: dachte | Partizip II: gedacht
+empfehlen\tpolecać | Präteritum: empfahl | Partizip II: empfohlen | 3. os: empfiehlt
+entscheiden\tdecydować | Präteritum: entschied | Partizip II: entschieden
+essen\tjeść | Präteritum: aß | Partizip II: gegessen | 3. os: isst
+fahren\tjechać, zawieźć | Präteritum: fuhr | Partizip II: gefahren sein haben | 3. os: fährt
+fallen\tupadać | Präteritum: fiel | Partizip II: gefallen sein | 3. os: fällt
+fangen\tłapać | Präteritum: fing | Partizip II: gefangen | 3. os: fängt
+finden\tznaleźć | Präteritum: fand | Partizip II: gefunden
+fliegen\tlatać | Präteritum: flog | Partizip II: geflogen sein haben
+geben\tdawać | Präteritum: gab | Partizip II: gegeben | 3. os: gibt
+gehen\tiść | Präteritum: ging | Partizip II: gegangen sein
+geschehen\tdziać się, wydarzyć się | Präteritum: geschah | Partizip II: geschehen sein | 3. os: geschieht
+gewinnen\twygrać, zyskać | Präteritum: gewann | Partizip II: gewonnen
+haben\tmieć | Präteritum: hatte | Partizip II: gehabt | 3. os: hat
+halten\ttrzymać | Präteritum: hielt | Partizip II: gehalten | 3. os: hält
+hängen\twisieć | Präteritum: hing | Partizip II: gehangen
+heißen\tnazywać się | Präteritum: hieß | Partizip II: geheißen
+helfen\tpomagać | Präteritum: half | Partizip II: geholfen | 3. os: hilft
+kennen\tznać | Präteritum: kannte | Partizip II: gekannt
+kommen\tprzychodzić | Präteritum: kam | Partizip II: gekommen sein
+(ein)laden\tładować | Präteritum: lud ein | Partizip II: (ein)geladen | 3. os: lädt ... (ein)
+lassen\tpozwalać | Präteritum: ließ | Partizip II: gelassen | 3. os: lässt
+laufen\tbiec | Präteritum: lief | Partizip II: gelaufen sein | 3. os: läuft
+lesen\tczytać | Präteritum: las | Partizip II: gelesen | 3. os: liest
+liegen\tleżeć | Präteritum: lag | Partizip II: gelegen
+nehmen\tbrać, wziąć | Präteritum: nahm | Partizip II: genommen | 3. os: nimmt
+rufen\twołać | Präteritum: rief | Partizip II: gerufen
+schlafen\tspać | Präteritum: schlief | Partizip II: geschlafen | 3. os: schläft
+schlagen\tbić, uderzać | Präteritum: schlug | Partizip II: geschlagen | 3. os: schlägt
+schließen\tzamykać | Präteritum: schloss | Partizip II: geschlossen
+schneiden\tciąć, kroić | Präteritum: schnitt | Partizip II: geschnitten
+schreiben\tpisać | Präteritum: schrieb | Partizip II: geschrieben
+schwimmen\tpływać | Präteritum: schwamm | Partizip II: geschwommen sein
+sehen\twidzieć | Präteritum: sah | Partizip II: gesehen | 3. os: sieht
+sein\tbyć | Präteritum: war | Partizip II: gewesen sein | 3. os: ist
+singen\tśpiewać | Präteritum: sang | Partizip II: gesungen
+sitzen\tsiedzieć | Präteritum: saß | Partizip II: gesessen
+sprechen\tmówić | Präteritum: sprach | Partizip II: gesprochen | 3. os: spricht
+stehen\tstać | Präteritum: stand | Partizip II: gestanden
+steigen\twzrastać, wspinać się | Präteritum: stieg | Partizip II: gestiegen sein
+sterben\tumierać | Präteritum: starb | Partizip II: gestorben sein | 3. os: stirbt
+streiten\tkłócić się | Präteritum: stritt | Partizip II: gestritten
+tragen\tnosić | Präteritum: trug | Partizip II: getragen | 3. os: trägt
+treffen\tspotykać | Präteritum: traf | Partizip II: getroffen | 3. os: trifft
+treiben\tuprawiać, napędzać | Präteritum: trieb | Partizip II: getrieben
+trinken\tpić | Präteritum: trank | Partizip II: getrunken
+tun\tczynić, robić | Präteritum: tat | Partizip II: getan | 3. os: tut
+vergessen\tzapomnieć | Präteritum: vergaß | Partizip II: vergessen | 3. os: vergisst
+verlieren\ttracić, gubić | Präteritum: verlor | Partizip II: verloren
+wachsen\trosnąć | Präteritum: wuchs | Partizip II: gewachsen sein | 3. os: wächst
+waschen\tmyć się, prać | Präteritum: wusch | Partizip II: gewaschen | 3. os: wäscht
+werden\tstawać się, zostać | Präteritum: wurde | Partizip II: geworden sein | 3. os: wird
+werfen\trzucać | Präteritum: warf | Partizip II: geworfen | 3. os: wirft
+wissen\twiedzieć | Präteritum: wusste | Partizip II: gewusst | 3. os: weiß
+ziehen\tciągnąć | Präteritum: zog | Partizip II: gezogen sein haben
+zwingen\tzmuszać | Präteritum: zwang | Partizip II: gezwungen`;
 
 // Parsowanie fiszek
 const allCards = flashcardsData.trim().split('\n').map((line, idx) => {
@@ -160,7 +160,31 @@ const statHard = document.getElementById('stat-hard');
 const statGood = document.getElementById('stat-good');
 const statEasy = document.getElementById('stat-easy');
 
-// ===== WEB SPEECH API =====
+// ===== DODANIE STYLÓW CSS DLA CZCIONEK =====
+(function addCustomStyles() {
+  const style = document.createElement('style');
+  style.textContent = `
+    /* Polski tekst na BACK - 2x większy */
+    .flashcard-back .translation {
+      font-size: clamp(2.2rem, 9vw, 3.6rem) !important;
+      font-weight: 700 !important;
+      color: #2d3436 !important;
+      margin-bottom: 20px !important;
+      line-height: 1.3 !important;
+    }
+
+    /* Niemiecki tekst na BACK - zmniejszony o 35% (0.65 = 100% - 35%) */
+    .flashcard-back .german-verb {
+      font-size: clamp(1.17rem, 4.875vw, 1.43rem) !important;
+      font-weight: 500 !important;
+      color: #636e72 !important;
+      line-height: 1.5 !important;
+    }
+  `;
+  document.head.appendChild(style);
+})();
+
+// ===== WEB SPEECH API - NAPRAWIONE =====
 
 function loadVoices() {
   const voices = synth.getVoices();
